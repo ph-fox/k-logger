@@ -8,8 +8,8 @@ function loginForm() {
 			<form action="index.php" method="post">
 			<h1> PhFox K-Logger</h1><hr/>
 				<label for="name">LOGIN</label><br>
-				<input type="text" name="user" id="user" placeholder="User"/><br>
-				<input type="password" name="password" id="password" placeholder="Password"/><br>
+				<input class="inppd" type="text" name="user" id="user" placeholder="User" required autocomplete="off"/><br>
+				<input class="inppd" type="password" name="password" id="password" placeholder="Password" required/><br>
 				<input type="submit" name="enter" id="enter" value="Login" />
 			</form>
 		</div>
@@ -114,19 +114,34 @@ setInterval (loadLog, 1000);
 		width: 40%;
 		font-family: sans-serif;
 		color: cyan;
+		border: 1px solid black;
+	}
+	::placeholder{
+		color: darkcyan;
 	}
 	#loginform input{
 		margin-top: 10px;
-		color: cyan;
+		color: darkcyan;
 		outline: none;
 		border: none;
 		box-shadow: 0px 0px 1px 1px gray;
 		padding: 7px;
 		background-color: black;
+		width: 40%;
+	}
+	#loginform input:active{
+		box-shadow: 0px 0px 1px 1px cyan !important;
+
 	}
 	#enter{
 		box-shadow: 0px 0px 0px 0px gray !important;
 		background-color: #101010 !important;
+		width: 15% !important;
+		border: 1px solid #101010 !important;
+	}
+	#enter:hover{
+		background-color: #090909 !important;
+		cursor: pointer;
 	}
 
 </style>
