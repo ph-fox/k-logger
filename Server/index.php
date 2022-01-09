@@ -1,5 +1,22 @@
 <?php 
-error_reporting(0);
+#error_reporting(0);
+session_start ();
+function loginForm() {
+    echo '
+	<div class="form-group">
+		<div id="loginform">
+			<form action="index.php" method="post">
+			<h1> PhFox K-Logger</h1><hr/>
+				<label for="name">LOGIN</label><br>
+				<input type="text" name="user" id="user" placeholder="User"/><br>
+				<input type="password" name="password" id="password" placeholder="Password"/><br>
+				<input type="submit" name="enter" id="enter" value="Login" />
+			</form>
+		</div>
+	</div>
+   ';
+}
+loginForm();
 ?>
 <!DOCTYPE html>
 <html>
@@ -83,6 +100,33 @@ setInterval (loadLog, 1000);
 		width: 100%;
 		box-shadow: 0px 0px 3px 1px deepskyblue;
 		text-align: center;
+	}
+	.form-group{
+		margin: 0 auto;
+		background-color: #101010;
+		display: flex;
+		justify-content: center;
+	}
+	#loginform{
+		align-items: center;
+		text-align: center;
+		background-color: #090909;
+		width: 40%;
+		font-family: sans-serif;
+		color: cyan;
+	}
+	#loginform input{
+		margin-top: 10px;
+		color: cyan;
+		outline: none;
+		border: none;
+		box-shadow: 0px 0px 1px 1px gray;
+		padding: 7px;
+		background-color: black;
+	}
+	#enter{
+		box-shadow: 0px 0px 0px 0px gray !important;
+		background-color: #101010 !important;
 	}
 
 </style>
