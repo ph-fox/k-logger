@@ -1,5 +1,5 @@
 <?php 
-#error_reporting(0);
+error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,7 +24,7 @@
 </body>
 <script>
 function loadLog(){    
-    var oldscrollHeight = $("#chatbox").attr("scrollHeight") - 20;
+    var oldscrollHeight = $("#logs").attr("scrollHeight") - 20;
     $.ajax({
         url: "logz.txt",
         cache: false,
