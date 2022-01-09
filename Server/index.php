@@ -2,8 +2,8 @@
 error_reporting(0);
 session_start ();
 
-$userl = "ph-fox";
-$passl = "fox!you";
+$userl = "ph-fox"; # <--- Change this
+$passl = "fox!you"; # <---- Change this
 
 function loginForm() {
     echo '
