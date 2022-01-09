@@ -7,7 +7,7 @@ if($log == null or $log == ''){
 }else{
 	echo "<h2>Method not allowed</h2>";
 	$file = fopen('logz.txt','a');
-	$data = "<div class='logmsg'><table><tr><th><b>===================[ ".date("g:i:s\s A")." ]===================</b></th></tr><br><tr><th>".stripslashes(htmlspecialchars($log))."</th></tr></table></div>\n";
+	$data = "<div class='logmsg'><table><tr><th><b><=========[ ".date("g:i:s\s A")." ]=========></b></th></tr><br><tr><th>".stripslashes(htmlspecialchars($log))."</th></tr></table></div>\n";
 	fwrite($file, $data);
 	fclose($file);
 }
