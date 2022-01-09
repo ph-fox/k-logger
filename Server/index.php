@@ -60,21 +60,28 @@ setInterval (loadLog, 1000);
 	.logs{
 		margin: 0px auto;
 		margin-top: 10px;
-		justify-content: center;
 		background-color: #101010;
 		height: 90%;
 		font-size: 20px;
 		overflow: auto;
-		text-align: center;
 		margin-bottom:5px;
 	}
 	.logmsg{
-		border: 1px solid red;
+		margin: 2px;
+		border: 1px solid grey;
 		color: darkcyan;
 		font-family: sans-serif;
 	}
+	.logmsg table{
+		width: 100%;
+		padding: 10px;
+		#border: 3px solid #505050;
+		text-align: center;
+		margin-bottom: 10px !important;
+	}
 	.logmsg tr{
-		box-shadow: 0px 0px 3px 1px cyan;
+		width: 100%;
+		box-shadow: 0px 0px 3px 1px deepskyblue;
 		text-align: center;
 	}
 
