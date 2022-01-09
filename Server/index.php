@@ -1,8 +1,10 @@
 <?php 
 error_reporting(0);
 session_start ();
+
 $userl = "ph-fox";
 $passl = "fox!you";
+
 function loginForm() {
     echo '
 	<div class="form-group">
