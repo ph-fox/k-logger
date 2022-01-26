@@ -22,7 +22,7 @@ function loginForm() {
 }
 
 if(isset($_REQUEST['enter'])){
-	if(isset($_REQUEST['user']) == $userl and isset($_REQUEST['password']) == $passl){
+	if($_REQUEST['user'] == $userl and $_REQUEST['password'] == $passl){
 		$up = $userl.'<:>'.$passl;
 		$_SESSION['data'] = stripslashes(htmlspecialchars($up));
 	}else{
